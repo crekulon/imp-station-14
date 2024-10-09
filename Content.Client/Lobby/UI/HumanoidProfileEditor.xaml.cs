@@ -1451,13 +1451,13 @@ namespace Content.Client.Lobby.UI
             {
                 if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, hairProto, _prototypeManager))
                 {
-                    if (_markingManager.MustMatchSkin(Profile.Species, HumanoidVisualLayers.Hair, out var _, _prototypeManager))
+                    if (_markingManager.MustMatchSkin(Profile.Species, HumanoidVisualLayers.Hair, out var alpha, _prototypeManager))
                     {
-                        hairColor = Profile.Appearance.SkinColor;
+                        hairColor = Profile.Appearance.SkinColor.WithAlpha(alpha);
                     }
                     else
                     {
-                        hairColor = Profile.Appearance.HairColor;
+                        hairColor = Profile.Appearance.HairColor.WithAlpha(alpha);
                     }
                 }
             }
